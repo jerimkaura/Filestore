@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/navigation_clients">
+
+    <fragment
+        android:id="@+id/navigation_clients"
+        android:name="com.jerimkaura.filestore.presentation.clients.ClientsFragment"
+        android:label="@string/title_clients"
+        tools:layout="@layout/fragment_clients">
+
+        <action
+            android:id="@+id/action_navigation_clients_to_clientFragment"
+            app:destination="@id/clientFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add"
+        android:name="com.jerimkaura.filestore.presentation.add.AddFragment"
+        android:label="@string/title_add_client"
+        tools:layout="@layout/fragment_add">
+        <action
+            android:id="@+id/action_navigation_add_to_navigation_clients"
+            app:destination="@id/navigation_clients"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.jerimkaura.filestore.presentation.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/clientFragment"
+        android:name="com.jerimkaura.filestore.presentation.client.ClientFragment"
+        android:label="fragment_client"
+        tools:layout="@layout/fragment_client" />
+
+</navigation>

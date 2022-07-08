@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Global</string>
+    <string name="title_add_client">NEW CLIENT</string>
+    <string name="title_profile">PROFILE</string>
+    <string name="title_clients">CLIENTS</string>
+    <string name="title_client_details">CLIENT DETAILS</string>
+
+    <string name="date_label">Meeting Date:</string>
+    <string name="name">Client Name</string>
+    <string name="save">Save Client</string>
+    <string name="order">Order</string>
+    <string name="terms">Terms</string>
+    <string name="profile_name">Username</string>
+    <string name="profile_name_key">profile_name_key</string>
+    <string name="profile_preference_key">profile_preference_key</string>
+    <string name="profile_name_default"> </string>
+    <string name="profile_update_success">Profile update success.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
