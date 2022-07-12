@@ -1,9 +1,8 @@
 package com.jerimkaura.filestore.presentation.clients
 
-import androidx.lifecycle.MutableLiveData
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.jerimkaura.filestore.data.Client
-import com.jerimkaura.filestore.data.ClientDao
 import com.jerimkaura.filestore.repository.ClientRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

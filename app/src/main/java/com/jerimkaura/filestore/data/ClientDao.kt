@@ -11,5 +11,5 @@ interface ClientDao {
     fun getAllClients(): List<Client>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-     fun insert(client: Client)
+    fun insert(client: Client)
 }
