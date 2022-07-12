@@ -1,9 +1,9 @@
-package com.jerimkaura.filestore.data.local
+package com.jerimkaura.filestore.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "clients")
+@Entity
 data class Client(
     @PrimaryKey(autoGenerate = true) var id: Int = 0,
     var date: Long,

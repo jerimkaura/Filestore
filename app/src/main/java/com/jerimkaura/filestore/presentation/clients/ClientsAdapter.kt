@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.jerimkaura.filestore.data.local.Client
+import com.jerimkaura.filestore.data.Client
 import com.jerimkaura.filestore.databinding.ClientItemBinding
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ClientsAdapter :
+class ClientsAdapter:
     RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>() {
     inner class ClientsViewHolder(private val clientItemBinding: ClientItemBinding) :
         RecyclerView.ViewHolder(clientItemBinding.root) {
@@ -27,9 +27,8 @@ class ClientsAdapter :
 
     private var clients : List<Client> = ArrayList()
 
-
     fun addClients(items: List<Client>) {
-        this.clients = items as MutableList<Client>
+        this.clients = items
         notifyDataSetChanged()
     }
 
