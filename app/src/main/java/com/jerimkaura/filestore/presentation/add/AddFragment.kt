@@ -3,14 +3,19 @@ package com.jerimkaura.filestore.presentation.add
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.jerimkaura.filestore.R
 import com.jerimkaura.filestore.data.Client
 import com.jerimkaura.filestore.databinding.FragmentAddBinding
 import com.jerimkaura.filestore.util.showAlert
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.android.synthetic.main.client_item.*
+import java.time.LocalDateTime
 
-
+@AndroidEntryPoint
 class AddFragment : Fragment(R.layout.fragment_add) {
+    private val addViewModel: AddViewModel by viewModels()
     private var binding: FragmentAddBinding? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,7 +32,14 @@ class AddFragment : Fragment(R.layout.fragment_add) {
             } else if (terms.isBlank()) {
                 showAlert(requireContext(), "Terms cannot be blank.")
             } else {
-                showAlert(requireContext(), "Data entered correctly.")
+                val client = Client(
+                    date = System.currentTimeMillis(),
+                    name = name,
+                    order = order,
+                    terms = terms
+                )
+                addViewModel.insertClient(client)
+                showAlert(requireContext(), "$client")
             }
         }
     }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Global</string>
+    <string name="app_name">FileStore</string>
     <string name="title_add_client">NEW CLIENT</string>
     <string name="title_profile">PROFILE</string>
     <string name="title_clients">CLIENTS</string>
