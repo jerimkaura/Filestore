@@ -1,15 +1,22 @@
 package com.jerimkaura.filestore.data
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.lifecycle.LiveData
+import androidx.room.*
 
 @Dao
 interface ClientDao {
     @Query("SELECT * FROM client ORDER BY id DESC")
-    fun getAllClients(): List<Client>?
+    fun getAllClients(): LiveData<List<Client>>
+
+    @Query("SELECT * FROM client WHERE id=:id ")
+    fun getClientById(id: Int): LiveData<Client>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(client: Client)
+    suspend fun addClient(client: Client): Long
+
+    @Delete
+    suspend fun deleteClient(client: Client)
+
+    @Update
+    suspend fun updateClient(client: Client)
 }

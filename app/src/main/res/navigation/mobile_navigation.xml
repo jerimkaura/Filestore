@@ -12,7 +12,7 @@
 
         <action
             android:id="@+id/action_navigation_clients_to_clientFragment"
-            app:destination="@id/clientFragment" />
+            app:destination="@id/clientDetailFragment" />
     </fragment>
 
     <fragment
@@ -31,9 +31,13 @@
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/clientFragment"
-        android:name="com.jerimkaura.filestore.presentation.client.ClientFragment"
-        android:label="fragment_client"
-        tools:layout="@layout/fragment_client" />
+        android:id="@+id/clientDetailFragment"
+        android:name="com.jerimkaura.filestore.presentation.client.ClientDetailsFragment"
+        android:label="@string/title_client_details"
+        tools:layout="@layout/fragment_client_details" >
+        <argument
+            android:name="client_id"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

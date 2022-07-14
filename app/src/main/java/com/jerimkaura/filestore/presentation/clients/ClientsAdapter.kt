@@ -3,8 +3,7 @@ package com.jerimkaura.filestore.presentation.clients
 import android.text.format.DateFormat
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.AsyncListDiffer
-import androidx.recyclerview.widget.DiffUtil
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.jerimkaura.filestore.data.Client
 import com.jerimkaura.filestore.databinding.ClientItemBinding
@@ -14,7 +13,7 @@ class ClientsAdapter :
     RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>() {
     private var clients: MutableList<Client> = ArrayList()
 
-    inner class ClientsViewHolder(private val clientItemBinding: ClientItemBinding) :
+    inner class ClientsViewHolder(val clientItemBinding: ClientItemBinding) :
         RecyclerView.ViewHolder(clientItemBinding.root) {
         fun bindItem(client: Client) {
             clientItemBinding.name.text = client.name
@@ -23,27 +22,12 @@ class ClientsAdapter :
             calendar.timeInMillis = client.date
             clientItemBinding.date.text = dateFormat.format(calendar.time)
         }
-
     }
 
     fun addClients(items: List<Client>) {
         this.clients.addAll(items)
         notifyDataSetChanged()
     }
-
-//    private val diffCallback = object : DiffUtil.ItemCallback<Client>() {
-//        override fun areItemsTheSame(oldItem: Client, newItem: Client): Boolean {
-//            return oldItem.id == newItem.id
-//        }
-//
-//        override fun areContentsTheSame(oldItem: Client, newItem: Client): Boolean {
-//            return oldItem == newItem
-//        }
-//
-//    }
-//
-//    // getting the two lists and comparing them
-//    private val differ = AsyncListDiffer(this, diffCallback)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientsViewHolder {
         return ClientsViewHolder(
@@ -52,23 +36,21 @@ class ClientsAdapter :
     }
 
     override fun onBindViewHolder(holder: ClientsViewHolder, position: Int) {
-       // val client = differ.currentList[position]
-        holder.bindItem(clients[position])
-        setOnClickListener {
-            onItemClickListener?.let { it(clients[position]) }
+        val client = clients[position]
+        holder.bindItem(client)
+        holder.clientItemBinding.root.setOnClickListener { view ->
+            val action = client.id?.let { it1 ->
+                ClientsFragmentDirections.actionNavigationClientsToClientFragment(
+                    it1
+                )
+            }
+            if (action != null) {
+                view.findNavController().navigate(action)
+            }
         }
     }
 
     override fun getItemCount(): Int {
-        // Getting item count from our list differ
-       // return differ.currentList.size
         return clients.size
     }
-
-    private var onItemClickListener: ((Client) -> Unit)? = null
-
-    private fun setOnClickListener(listener: ((Client)) -> Unit) {
-        onItemClickListener = listener
-    }
-
 }

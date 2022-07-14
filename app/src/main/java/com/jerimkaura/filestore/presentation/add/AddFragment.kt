@@ -5,6 +5,8 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
+import com.jerimkaura.filestore.MainActivity
 import com.jerimkaura.filestore.R
 import com.jerimkaura.filestore.data.Client
 import com.jerimkaura.filestore.databinding.FragmentAddBinding
@@ -32,14 +34,11 @@ class AddFragment : Fragment(R.layout.fragment_add) {
             } else if (terms.isBlank()) {
                 showAlert(requireContext(), "Terms cannot be blank.")
             } else {
-                val client = Client(
-                    date = System.currentTimeMillis(),
-                    name = name,
-                    order = order,
-                    terms = terms
-                )
-                addViewModel.insertClient(client)
-                showAlert(requireContext(), "$client")
+                val client = Client( date = System.currentTimeMillis(), name = name, order = order, terms = terms)
+                addViewModel.addClient(client)
+                (activity as MainActivity).hideKeyboard()
+                val navController = Navigation.findNavController(view)
+                navController.navigate(AddFragmentDirections.actionNavigationAddToNavigationClients())
             }
         }
     }
