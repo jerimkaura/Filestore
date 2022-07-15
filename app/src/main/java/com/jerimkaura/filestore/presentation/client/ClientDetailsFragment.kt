@@ -76,7 +76,7 @@ class ClientDetailsFragment : Fragment(R.layout.fragment_client_details),
                 file
             )
         } catch (e: IllegalArgumentException) {
-            Log.e("File fragment", "The selected file cannot be shared: $file")
+            Log.e("Single Client fragment", "The selected file cannot be shared: $file")
             null
         }
 
