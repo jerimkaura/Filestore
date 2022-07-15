@@ -8,30 +8,18 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="clientFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="500" />
-                            <option name="y" value="368" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="navigation_add">
+                  <entry key="addClientFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
                             <option name="x" value="12" />
-                            <option name="y" value="368" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_navigation_add_to_navigation_clients">
+                            <entry key="action_addFragment_to_clientsFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -41,7 +29,7 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="navigation_clients">
+                  <entry key="clientDetailsFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
@@ -52,7 +40,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_navigation_clients_to_clientFragment">
+                            <entry key="action_clientDetailsFragment_to_clientsFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -62,12 +50,33 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="navigation_profile">
+                  <entry key="clientsFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
                             <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_clientsFragment_to_clientDetailsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="profileFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="256" />
                             <option name="y" value="12" />
                           </Point>
                         </option>

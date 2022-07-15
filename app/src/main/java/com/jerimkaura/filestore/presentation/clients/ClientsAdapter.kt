@@ -29,6 +29,11 @@ class ClientsAdapter :
         notifyDataSetChanged()
     }
 
+    fun clearItems(){
+        this.clients.clear()
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClientsViewHolder {
         return ClientsViewHolder(
             ClientItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -39,10 +44,8 @@ class ClientsAdapter :
         val client = clients[position]
         holder.bindItem(client)
         holder.clientItemBinding.root.setOnClickListener { view ->
-            val action = client.id?.let { it1 ->
-                ClientsFragmentDirections.actionNavigationClientsToClientFragment(
-                    it1
-                )
+            val action = client.id?.let { clientId ->
+               ClientsFragmentDirections.actionClientsFragmentToClientDetailsFragment(clientId)
             }
             if (action != null) {
                 view.findNavController().navigate(action)

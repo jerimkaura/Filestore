@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.jerimkaura.filestore.R
 import com.jerimkaura.filestore.databinding.FragmentClientsBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,15 +22,14 @@ class ClientsFragment : Fragment(R.layout.fragment_clients) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentClientsBinding.bind(view)
         val rvClients = binding!!.rvClients
-
         clientsViewModel.getAllClient.observe(viewLifecycleOwner) { clients ->
+            clientsAdapter.clearItems()
             clientsAdapter.addClients(clients)
             rvClients.apply {
                 hasFixedSize()
-                layoutManager = LinearLayoutManager(
+                layoutManager = GridLayoutManager(
                     requireContext(),
-                    LinearLayoutManager.VERTICAL,
-                    false
+                    2
                 )
                 adapter = clientsAdapter
             }

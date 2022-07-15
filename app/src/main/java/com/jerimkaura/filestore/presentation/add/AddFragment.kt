@@ -38,7 +38,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
                 addViewModel.addClient(client)
                 (activity as MainActivity).hideKeyboard()
                 val navController = Navigation.findNavController(view)
-                navController.navigate(AddFragmentDirections.actionNavigationAddToNavigationClients())
+                navController.navigate(AddFragmentDirections.actionAddFragmentToClientsFragment())
             }
         }
     }

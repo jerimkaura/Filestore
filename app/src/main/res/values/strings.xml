@@ -4,7 +4,7 @@
     <string name="title_profile">PROFILE</string>
     <string name="title_clients">CLIENTS</string>
     <string name="title_client_details">CLIENT DETAILS</string>
-    <string name="date_label">Meeting Date:</string>
+    <string name="date_label">Date:</string>
     <string name="name">Client Name</string>
     <string name="save">Save Client</string>
     <string name="order">Order</string>

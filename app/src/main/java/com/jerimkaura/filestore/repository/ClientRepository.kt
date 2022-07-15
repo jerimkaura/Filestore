@@ -20,8 +20,8 @@ class ClientRepository @Inject constructor(private val clientDao: ClientDao) {
         clientDao.updateClient(client)
     }
 
-    fun getClient(id: Int) {
-        clientDao.getClientById(id)
+    fun getClient(id: Int): LiveData<Client>{
+        return clientDao.getClientById(id)
     }
 
 }
