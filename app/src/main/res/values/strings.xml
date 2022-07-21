@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">FileStore</string>
-    <string name="title_add_client">NEW CLIENT</string>
+    <string name="title_add_client">ADD</string>
     <string name="title_profile">PROFILE</string>
     <string name="title_clients">CLIENTS</string>
     <string name="title_client_details">CLIENT DETAILS</string>
@@ -14,4 +14,9 @@
     <string name="profile_preference_key">profile_preference_key</string>
     <string name="profile_name_default"> </string>
     <string name="profile_update_success">Profile update success.</string>
+    <string name="media">MEDIA</string>
+    <string name="media_url_mp3">https://storage.googleapis.com/exoplayer-test-media-0/Jazz_In_Paris.mp3</string>
+    <string name="media_url_mp4">https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4</string>
+<!--    <string name="media_url_dash">https://www.youtube.com/watch?v=5kBlk8GsZlA</string>-->
+    <string name="media_url_dash"><![CDATA[https://www.youtube.com/api/manifest/dash/id/bf5bb2419360daf1/source/youtube?as=fmp4_audio_clear,fmp4_sd_hd_clear&sparams=ip,ipbits,expire,source,id,as&ip=0.0.0.0&ipbits=0&expire=19000000000&signature=51AF5F39AB0CEC3E5497CD9C900EBFEAECCCB5C7.8506521BFC350652163895D4C26DEE124209AA9E&key=ik0]]></string>
 </resources>
