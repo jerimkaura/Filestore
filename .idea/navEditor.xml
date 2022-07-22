@@ -71,18 +71,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="playAudioFragment2">
+                  <entry key="playAudioFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="256" />
+                            <option name="x" value="12" />
                             <option name="y" value="12" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_playAudioFragment2_to_clientsFragment">
+                            <entry key="action_playAudioFragment_to_clientsFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
