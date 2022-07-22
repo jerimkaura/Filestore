@@ -1,6 +1,5 @@
 package com.jerimkaura.filestore.presentation.add
 
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -10,7 +9,7 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.jerimkaura.filestore.MainActivity
 import com.jerimkaura.filestore.R
-import com.jerimkaura.filestore.data.Client
+import com.jerimkaura.filestore.data.entities.Client
 import com.jerimkaura.filestore.databinding.FragmentAddBinding
 import com.jerimkaura.filestore.util.showAlert
 import dagger.hilt.android.AndroidEntryPoint

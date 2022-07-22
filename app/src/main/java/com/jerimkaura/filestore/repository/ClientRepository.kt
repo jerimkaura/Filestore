@@ -1,7 +1,7 @@
 package com.jerimkaura.filestore.repository
 
 import androidx.lifecycle.LiveData
-import com.jerimkaura.filestore.data.Client
+import com.jerimkaura.filestore.data.entities.Client
 import com.jerimkaura.filestore.data.ClientDao
 import javax.inject.Inject
 

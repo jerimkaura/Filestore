@@ -9,7 +9,7 @@ import android.graphics.pdf.PdfDocument
 import android.text.format.DateFormat
 import android.util.Log
 import com.jerimkaura.filestore.R
-import com.jerimkaura.filestore.data.Client
+import com.jerimkaura.filestore.data.entities.Client
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException

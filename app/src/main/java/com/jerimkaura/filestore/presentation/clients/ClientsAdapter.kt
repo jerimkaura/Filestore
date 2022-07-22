@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.jerimkaura.filestore.data.Client
+import com.jerimkaura.filestore.data.entities.Client
 import com.jerimkaura.filestore.databinding.ClientItemBinding
 import java.util.*
 

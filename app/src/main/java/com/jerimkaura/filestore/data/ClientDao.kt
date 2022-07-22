@@ -2,6 +2,7 @@ package com.jerimkaura.filestore.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.jerimkaura.filestore.data.entities.Client
 
 @Dao
 interface ClientDao {
