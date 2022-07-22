@@ -1,13 +1,9 @@
 package com.jerimkaura.filestore.presentation.client
 
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import android.text.format.DateFormat
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.FileProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.jerimkaura.filestore.databinding.FileItemBinding
 import java.io.File

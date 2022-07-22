@@ -12,7 +12,7 @@
         android:title="@string/title_add_client" />
 
     <item
-        android:id="@+id/playAudioFragment"
+        android:id="@+id/songListFragment"
         android:icon="@drawable/ic_audio"
         android:title="@string/media" />
 

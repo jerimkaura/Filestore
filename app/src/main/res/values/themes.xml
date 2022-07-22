@@ -13,4 +13,10 @@
 
         <item name="android:fontFamily">@font/bold</item>
     </style>
+    <style name="Theme.FileStore.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.FileStore.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.FileStore.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

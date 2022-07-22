@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/clientsFragment">
+    app:startDestination="@id/songListFragment">
 
     <fragment
         android:id="@+id/addClientFragment"
@@ -43,10 +43,19 @@
     <fragment
         android:id="@+id/playAudioFragment"
         android:name="com.jerimkaura.filestore.presentation.media.PlayAudioFragment"
-        android:label="MEDIA"
+        android:label="PLAY"
         tools:layout="@layout/fragment_play_audio" >
+        <argument
+            android:name="song_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/songListFragment"
+        android:name="com.jerimkaura.filestore.presentation.media.SongListFragment"
+        android:label="SONGS"
+        tools:layout="@layout/fragment_song_list" >
         <action
-            android:id="@+id/action_playAudioFragment_to_clientsFragment"
-            app:destination="@id/clientsFragment" />
+            android:id="@+id/action_songListFragment_to_playAudioFragment"
+            app:destination="@id/playAudioFragment" />
     </fragment>
 </navigation>

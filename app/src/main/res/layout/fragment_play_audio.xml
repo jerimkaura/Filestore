@@ -1,21 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.media.PlayAudioFragment">
 
-    <androidx.media3.ui.PlayerView
-        android:id="@+id/player_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+    <TextView
+        android:id="@+id/tv_song_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:gravity="center"
+        android:text="@string/current_song"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/artworkView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="50dp"
+        android:padding="4sp"
+        android:src="@drawable/song_thumbnail"
+        app:civ_border_color="?attr/colorPrimary"
+        app:civ_border_overlay="true"
+        app:civ_border_width="2sp"
+        app:layout_constraintBottom_toTopOf="@+id/controlsWrapper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_song_name" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/controlsWrapper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.9">
+
+        <TextView
+            android:id="@+id/tv_song_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingBottom="18dp"
+            android:text="@string/current_song"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:progressTint="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_song_title"
+            app:layout_constraintWidth_percent="1" />
+
+        <TextView
+            android:id="@+id/progress_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0:07"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seek_bar" />
+
+        <TextView
+            android:id="@+id/total_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45:00"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/seek_bar"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintTop_toBottomOf="@id/seek_bar" />
+
+        <TextView
+            android:id="@+id/btn_previous_song"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:drawableEndCompat="@drawable/ic_previous_song"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progress_duration" />
+
+        <ImageButton
+            android:id="@+id/btn_play_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#00000000"
+            android:src="@drawable/ic_play_audio"
+            app:layout_constraintEnd_toStartOf="@id/btn_next_song"
+            app:layout_constraintStart_toEndOf="@id/btn_previous_song"
+            app:layout_constraintTop_toBottomOf="@id/progress_duration" />
+
+        <TextView
+
+            android:id="@+id/btn_next_song"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="end"
+            app:drawableEndCompat="@drawable/ic_next_song"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progress_duration" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

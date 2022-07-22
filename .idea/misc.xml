@@ -3,17 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_add_black_24dp.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/ic_audio.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/ic_baseline_settings_input_svideo_24.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/ic_client_details.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/ic_clients_black_24dp.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/ic_next_song.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/ic_play_audio.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/ic_previous_song.xml" value="0.1855" />
+        <entry key="app/src/main/res/drawable/ic_profile_black_24dp.xml" value="0.136" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23731884057971014" />
         <entry key="app/src/main/res/layout/activity_player.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/client_item.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/content_player.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/file_item.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/fragment_add.xml" value="0.15760869565217392" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.15760869565217392" />
         <entry key="app/src/main/res/layout/fragment_client.xml" value="0.15760869565217392" />
         <entry key="app/src/main/res/layout/fragment_client_details.xml" value="0.21467391304347827" />
         <entry key="app/src/main/res/layout/fragment_clients.xml" value="0.30105263157894735" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/fragment_play_audio.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1947463768115942" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/fragment_song_list.xml" value="0.2617753623188406" />
+        <entry key="app/src/main/res/layout/song_item.xml" value="0.27355072463768115" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2625" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>

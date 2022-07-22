@@ -1,9 +1,9 @@
 package com.jerimkaura.filestore.di
 
-import android.app.Application
 import android.content.Context
 import com.jerimkaura.filestore.data.AppDatabase
 import com.jerimkaura.filestore.data.ClientDao
+import com.jerimkaura.filestore.data.SongDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,5 +24,11 @@ class AppModule {
     @Provides
     fun getClientDao(appDatabase: AppDatabase): ClientDao{
         return  appDatabase.getClientDao()
+    }
+
+    @Singleton
+    @Provides
+    fun getSongDao(appDatabase: AppDatabase): SongDao{
+        return  appDatabase.getSongDao()
     }
 }
