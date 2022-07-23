@@ -1,9 +1,7 @@
 package com.jerimkaura.filestore.presentation.media
 
-
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.View
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
@@ -21,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class PlayAudioFragment : Fragment(com.jerimkaura.filestore.R.layout.fragment_play_audio) {
+class PlayAudioFragment : Fragment(R.layout.fragment_play_audio) {
     private var songs = ArrayList<Song>()
     private var player: ExoPlayer? = null
     private var playWhenReady = true
@@ -32,34 +30,32 @@ class PlayAudioFragment : Fragment(com.jerimkaura.filestore.R.layout.fragment_pl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentPlayAudioBinding.bind(view)
+        populateSongs()
+    }
+
+    private fun populateSongs() {
         songs.apply {
             add(
                 Song(
-                    uri = "https://d278.d2mefast.net/tb/a/06/otile_brown_x_jovial_jeraha_official_music_video_mp3_78210.mp3",
+                    uri = "https://d278.d2mefast.net/tb/a/06/otile_brown_x_jovial_jeraha_official_music_video_mp3_23906.mp3",
                     artist = "Otile Brown",
                     name = "Jeraha",
                 ),
             )
             add(
                 Song(
-                    uri = "https://d284.d2mefast.net/tb/d/1d/diamond_platnumz_naanzaje_official_music_video_mp3_78295.mp3",
+                    uri = "https://d276.d2mefast.net/tb/e/3e/zuchu_mwambieni_official_music_video_mp3_23968.mp3",
                     artist = "Diamond Platnumz",
                     name = "Naazaje",
                 ),
             )
             add(
                 Song(
-                    uri = "https://d279.d2mefast.net/tb/b/d7/otile_brown_x_jovial_such_kinda_love_official_music_video_mp3_78344.mp3",
+                    uri = "https://d278.d2mefast.net/tb/a/06/otile_brown_x_jovial_jeraha_official_music_video_mp3_23906.mp3",
                     artist = "Otile",
                     name = "Such Kinda Love",
                 ),
             )
-        }
-        arguments?.let { bundle ->
-            val passedArgs = PlayAudioFragmentArgs.fromBundle(bundle)
-            songsViewModel.getSingleSong(passedArgs.songId).observe(viewLifecycleOwner) { song ->
-//                binding!!.tvSongName.text = song.artist.plus(" ${song.name}")
-            }
         }
     }
 
@@ -72,7 +68,6 @@ class PlayAudioFragment : Fragment(com.jerimkaura.filestore.R.layout.fragment_pl
 
     override fun onResume() {
         super.onResume()
-//        hideSystemUi()
         if (Util.SDK_INT <= 23 || player == null) {
             initializePlayer()
         }
@@ -102,8 +97,6 @@ class PlayAudioFragment : Fragment(com.jerimkaura.filestore.R.layout.fragment_pl
             .build()
             .also { exoPlayer ->
                 exoPlayer.playWhenReady
-                val mediaItem = MediaItem.fromUri(getString(com.jerimkaura.filestore.R.string.media_url_mp3))
-                exoPlayer.setMediaItem(mediaItem)
                 songs.map { song ->
                     val songItem = song.uri?.let { MediaItem.fromUri(it) }
                     if (songItem != null) {
@@ -119,13 +112,7 @@ class PlayAudioFragment : Fragment(com.jerimkaura.filestore.R.layout.fragment_pl
                     play()
                     binding!!.btnPlayPause.setImageResource(R.drawable.ic_pause_song)
                     updatePlayerPositionProgress()
-
                 }
-
-
-
-                binding!!.totalDuration.text = player?.let { getReadableTime(it.duration.toInt()) }
-                updatePlayerPositionProgress()
                 binding!!.btnPlayPause.setOnClickListener {
                     if (player!!.isPlaying) {
                         player!!.pause().also {
@@ -151,7 +138,6 @@ class PlayAudioFragment : Fragment(com.jerimkaura.filestore.R.layout.fragment_pl
                     override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
                         progressValue = seekBar.progress
                     }
-
                     override fun onStartTrackingTouch(seekBar: SeekBar) {}
                     override fun onStopTrackingTouch(seekBar: SeekBar) {
                         seekBar.progress = progressValue
@@ -165,13 +151,13 @@ class PlayAudioFragment : Fragment(com.jerimkaura.filestore.R.layout.fragment_pl
     private fun updatePlayerPositionProgress() {
         Handler().postDelayed({
             if (player!!.isPlaying) {
-                binding!!.seekBar.max = player!!.duration.toInt()
-                binding!!.seekBar.progress = player!!.currentPosition.toInt()
+                binding!!.seekBar.max = 100
+                binding!!.seekBar.progress = (player!!.currentPosition.toFloat()
+                    .div(player!!.duration.toFloat()) * 100).toInt()
+                binding!!.seekBar.secondaryProgress = player!!.bufferedPercentage
                 binding!!.totalDuration.text = getReadableTime(player!!.duration.toInt())
                 binding!!.progressDuration.text = getReadableTime(player!!.currentPosition.toInt())
-                Log.d("==============>", "initializePlayer: ${player!!.bufferedPercentage}")
             }
-
             //repeat calling method
             updatePlayerPositionProgress()
         }, 1000)
@@ -201,5 +187,3 @@ class PlayAudioFragment : Fragment(com.jerimkaura.filestore.R.layout.fragment_pl
     }
 
 }
-
-
